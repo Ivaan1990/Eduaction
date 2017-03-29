@@ -6,10 +6,6 @@ public class ExampleCool extends  ExampleArray implements ExampleHAND {
     private int size;
     private int[] nums;
 
-    ExampleCool() {
-
-    }
-
     public ExampleCool(int size) {
 
         super("Array№2", 0, 0);
@@ -18,7 +14,8 @@ public class ExampleCool extends  ExampleArray implements ExampleHAND {
         this.nums = new int[size];
 
         for (int i = 0; i < nums.length; i++) {
-            nums[i] = super.randomMinMax(-5, 5);
+            nums[i] = super.randomMinMax(1, 5);
+
         }
 
     }
@@ -40,16 +37,16 @@ public class ExampleCool extends  ExampleArray implements ExampleHAND {
 
         try {
 
-            for (int i = 0; i < this.size / 2; i++) {
+            for (int i = 0; i < this.size/2; i++) {
                 sum_1 += nums[i];
             }
 
-            for (int j = this.size; j > this.size/2 ; j--) {
+            for (int j = 6; j < 12; j++) {
                 sum_2 += nums[j];
             }
 
-            out.println(sum_1);
-            out.print(sum_2);
+            out.println("Сумма первой половины = " + sum_1);
+            out.print("Сумма второй половины = " + sum_2);
 
         } catch (ArrayIndexOutOfBoundsException e) {
             out.print("Вышли за пределы массива");
