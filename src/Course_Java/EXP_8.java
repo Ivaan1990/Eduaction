@@ -8,6 +8,7 @@ import static java.lang.System.out;
 public class EXP_8 {
 
     static String divideLine (String target) {
+        /*Переносит 3 символа в массив, меняет средний символ на случайный*/
 
         String line = "qwertyuioplkjhgfdsazxcvbnm";
         char[] chars;
@@ -18,13 +19,11 @@ public class EXP_8 {
         char[]symb;
 
         symb = target.toCharArray();
-        int count = 0; // счетчик на совпадения среднего символа
 
         for (int i = 0; i < symb.length; i++){
 
             symb[1] = chars[randomVal];
             if (symb[1] == symb[0] || symb[1] == symb[2]) {
-                ++count;
                 symb[1] = chars[randomVal];
             } else {
                 symb[1] = chars[randomVal];
@@ -36,7 +35,7 @@ public class EXP_8 {
     }
 
     static String transformAlf (String target) {
-
+     /*Метод сортировки по алфавиту преобразованной строки */
         char[] symbl;
         symbl = target.toCharArray();
 
