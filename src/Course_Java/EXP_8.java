@@ -70,7 +70,7 @@ public class EXP_8 {
         String finalLine = divideLine(s2)+divideLine(s3)+divideLine(s4);
         System.out.println (finalLine);
         System.out.print(transformAlf(finalLine));
-
+//
     }
 
 }
