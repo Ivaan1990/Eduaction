@@ -5,22 +5,16 @@ import static java.lang.System.out;
 
 public class EXP_10 {
 
-    static boolean checkNum (char ch) {
-        return ch >= '0' && ch <= '9';
-    }
-
     public static void main (String[] args) {
         int count = 0;
-        String s = "jkagdas2jksn4da";
+        String s = "jkagdasjksnda";
         for (int i = 0; i < s.length(); i ++) {
 
             if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
                 ++count;
             }
         }
-
-        if (count == 0) out.print ("Чисел нет");
-        if (count > 0) out.print ("Чисел в строке: " + count);
+        out.print ("Чисел " + (count > 0 ? count : "нет"));
 
     }
 }
