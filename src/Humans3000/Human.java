@@ -1,5 +1,4 @@
 package Humans3000;
-
 public class Human {
 
     private String name;
