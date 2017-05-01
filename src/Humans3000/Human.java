@@ -1,4 +1,5 @@
 package Humans3000;
+
 public class Human {
 
     private String name;
@@ -44,6 +45,30 @@ public class Human {
     boolean showJob () {
         if (job) return true;
         return false;
+    }
+
+    public char getMale() {
+        return male;
+    }
+
+    public char getFemale() {
+        return female;
+    }
+
+    public double getHungry() {
+        return hungry;
+    }
+
+    public double getWireness() {
+        return wireness;
+    }
+
+    public boolean isHome() {
+        return home;
+    }
+
+    public boolean isJob() {
+        return job;
     }
 
 }
