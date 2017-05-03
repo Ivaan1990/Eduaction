@@ -1,32 +1,35 @@
 package Humans3000;
+import static java.lang.System.out;
 
 public class Human {
 
     private String name;
-    private char male = 'M', female = 'F';
     private double hungry, wireness;
     private int age;
-    private boolean home, job;
+    private boolean home, job, gender;
 
     public Human () {
 
     }
 
-    public Human (String name, char male, double hungry,
-           double wireness, int age, boolean home, boolean job) {
+    public Human (String name, double hungry, double wireness,
+                  int age, boolean home, boolean job, boolean gender) {
+
 
         this.name = name;
-        this.male = male;
         this.hungry = hungry;
         this.wireness = wireness;
         this.age = age;
         this.home = home;
         this.job = job;
+        this.gender = gender;
 
-        if (!home) {
-            this.job = false;
+        if (this.gender) {
+            out.println ("Male and his name " + name );
+        } else {
+            out.println("Female and her name " + name);
         }
-
+        if (!home) this.job = false;
     }
 
     public String getName () {
@@ -47,12 +50,12 @@ public class Human {
         return false;
     }
 
-    public char getMale() {
-        return male;
+    public void setGender(boolean gender) {
+        this.gender = gender;
     }
 
-    public char getFemale() {
-        return female;
+    public boolean isGender() {
+        return gender;
     }
 
     public double getHungry() {
