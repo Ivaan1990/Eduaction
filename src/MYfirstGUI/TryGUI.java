@@ -5,14 +5,31 @@ import javax.swing.*;
 public class TryGUI extends JFrame{
 
     TryGUI () {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ex){}//персонализирует окно программы под установленную ОС
 
+        // создается окно
         setTitle("GUI First");
-        setSize (new Dimension(300, 350));
+        setSize (new Dimension(300, 350)); // его размер, ширина, высота
         Dimension sSize = Toolkit.getDefaultToolkit().getScreenSize(), fSize = getSize();
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        JButton newButton = new JButton("Button");
-        getContentPane().add(newButton);
 
+        //создаем кнопки Jpanel
+        JPanel panel = new JPanel();
+        //panel.setLayout(new FlowLayout()); //размещает добавляемые на панель компоненты строго по очереди
+        //panel.add(new JButton("Кнопка"));
+        //panel.add(new JButton("+"));
+
+        //размещает кнопки согласно сторонам света, лучше использовать уже определенные константы WEST EAST SOUTH NORTH
+        getContentPane().add (new JButton("-"), BorderLayout.WEST);
+        getContentPane().add (new JButton("+"), BorderLayout.EAST);
+        getContentPane().add (new JButton("END"));//без параметра расположения, встает по центру
+
+        //setContentPane(panel);// узнать что за метод
+
+        //распологаем окно
         if (fSize.height > sSize.height) {
             fSize.height = sSize.height;
         }
@@ -21,9 +38,8 @@ public class TryGUI extends JFrame{
             fSize.width = sSize.width;
         }
 
-        setLocation((sSize.width - fSize.width)/8, (sSize.height - fSize.height));
-
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //выбираем точное расположение
+        setLocation((sSize.width - fSize.width)/2, (sSize.height - fSize.height)/2);
 
     }
 
