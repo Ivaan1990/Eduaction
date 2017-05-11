@@ -42,5 +42,4 @@ public class TryGUI extends JFrame{
         setLocation((sSize.width - fSize.width)/2, (sSize.height - fSize.height)/2);
 
     }
-
 }
