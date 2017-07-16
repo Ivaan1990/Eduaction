@@ -6,9 +6,10 @@ package threads;
 public class Wait implements Runnable {
 
     Thread t;
-
+    boolean pause;
     public Wait () {
-        t = new Thread(this);
+        this.pause = pause;
+        t = new Thread(this, "wait");
         t.start();
 
     }
@@ -16,15 +17,34 @@ public class Wait implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Started");
-        while(true){
-            try {
-                this.wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        int i = 0;
+        try{
+            System.out.println("Started " + Thread.currentThread());
+            while (true){
+                synchronized (this){
+                    //while(pause){
+                        if(pause) this.wait();
+                    //}
+                    System.out.println(++i);
+                    Thread.sleep(500);
+                }
             }
-
-            System.out.println("resumed");
         }
+        catch (InterruptedException e){
+
+        }
+
+
+
+    }
+
+    public void pause(){
+        pause = true;
+        System.out.println("pause " +  Thread.currentThread());
+    }
+    public synchronized void notifyMe() {
+            pause = false;
+            this.notify();
+        System.out.println("NotifyMe! " + Thread.currentThread());
     }
 }
