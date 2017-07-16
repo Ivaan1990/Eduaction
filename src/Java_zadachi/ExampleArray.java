@@ -7,16 +7,16 @@ public class ExampleArray implements ExampleHAND {
     private int line; // строка
     private int column; // столбец
 
-    public ExampleArray() {
+    public ExampleArray (int[][] array) {
+
+
 
     }
 
-    public ExampleArray (String name, int line, int column) {
+    public ExampleArray() {
 
         this.line = line;
         this.column = column;
-
-        out.println(name);
 
         this.nums = new int [line][column];
         for (int i = 0; i < line; i++) {
@@ -36,18 +36,18 @@ public class ExampleArray implements ExampleHAND {
 
     public void maxElement() {
 
-     /* максимальный элемент в строке, становится на нулевый индекс строки */
+     /* максимальный элемент в строке, становится на нулевый индекс столбца */
 
         for (int i = 0; i < line; i++) {
 
             int max = nums[i][0];
-            int maxIndex = 0;
+            int maxIndex = 0; //запоминает индекс max
 
             for (int j = 0; j < column; j++) {
 
-                if (nums[i][j] > max) { //TODO обычный алгоритм нахождения max
+                if (nums[i][j] > max) { //обычный алгоритм нахождения max
                     max = nums[i][j];
-                    maxIndex = j; //TODO запоминает индекс max
+                    maxIndex = j;
                 }
 
             }

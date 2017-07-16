@@ -57,7 +57,6 @@ public class EXP_8 {
     public static void main (String[] args) {
 
         StringBuffer s = new StringBuffer("onetwothr");
-
         StringBuffer s1 = new StringBuffer(s.subSequence(0, 3));
         StringBuffer sTwo = new StringBuffer(s.subSequence(3, 6));
         StringBuffer sTre = new StringBuffer(s.subSequence(6, 9));
@@ -67,9 +66,9 @@ public class EXP_8 {
         String s4 = sTre.toString();
 
         String finalLine = divideLine(s2)+divideLine(s3)+divideLine(s4);
-        System.out.println (finalLine);
-        System.out.print(transformAlf(finalLine));
-//
+        out.println (finalLine);
+        out.print(transformAlf(finalLine));
+
     }
 
 }

@@ -1,7 +1,17 @@
 package Animals;
 
-/**
- * Created by Asus on 04.03.2017.
- */
 public class Cat extends Animal {
+
+    boolean wool;
+    Object ob;
+
+    public Cat(int age) {
+        super(age);
+        this.ob = new Object();
+    }
+
+    @Override
+    public void sound() {
+        System.out.println("Meow");
+    }
 }

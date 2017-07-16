@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class CheckInteger {
 
-    // 1. Сделайте программу, которая будет проверять является ли число типа double целым.
+    // ]1. Сделайте программу, которая будет проверять является ли число типа double целым.
 
     public static void main(String[] args) {
 

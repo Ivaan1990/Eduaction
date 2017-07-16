@@ -7,11 +7,10 @@ public class ExampleCool extends  ExampleArray implements ExampleHAND {
     private int[] nums;
 
     public ExampleCool(int size) {
-
-        super("Array№2", 0, 0);
+        super();
 
         this.size = size;
-        this.nums = new int[size];
+        this.nums = new int[this.size];
 
         for (int i = 0; i < nums.length; i++) {
             nums[i] = super.randomMinMax(1, 5);

@@ -1,7 +1,16 @@
 package Animals;
 
+public abstract class Animal implements ISound {
 
+    private int age;
 
-public abstract class Animal {
-    int i;// надо
+    public Animal(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public abstract void sound();
 }

@@ -73,5 +73,4 @@ public class Human {
     public boolean isJob() {
         return job;
     }
-
 }
