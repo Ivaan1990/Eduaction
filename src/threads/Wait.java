@@ -1,22 +1,21 @@
 package threads;
 
-/**
- * Created by Asus on 16.07.2017.
- */
 public class Wait implements Runnable {
 
     Thread t;
     boolean pause;
+
     public Wait () {
+
         this.pause = pause;
         t = new Thread(this, "wait");
         t.start();
 
     }
 
-
     @Override
     public void run() {
+
         int i = 0;
         try{
             System.out.println("Started " + Thread.currentThread());
@@ -25,7 +24,7 @@ public class Wait implements Runnable {
                     //while(pause){
                         if(pause) this.wait();
                     //}
-                    System.out.println(++i);
+                    System.out.print(++i + " ");
                     Thread.sleep(500);
                 }
             }
@@ -33,15 +32,13 @@ public class Wait implements Runnable {
         catch (InterruptedException e){
 
         }
-
-
-
     }
 
     public void pause(){
         pause = true;
         System.out.println("pause " +  Thread.currentThread());
     }
+
     public synchronized void notifyMe() {
             pause = false;
             this.notify();
