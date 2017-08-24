@@ -2,8 +2,6 @@ package CurrencyConverter;
 import javax.swing.*;
 import java.util.Scanner;
 
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
-
 /*
  *************** Класс валют
  *
@@ -17,16 +15,28 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  * 4. Программа производит расчет, и выводит результат в конслоль
  */
 
-public class Currency implements IConverter {
+public class Currency extends JFrame implements IConverter {
 
-    private static final String valuta_RUB = "рубли", valuta_DOL = "доллары", valuta_EUR = "евро"; // валюты конвертера
-    private static final double kurs_DOL = 60, kurs_EUR = 76; // курсы валют
+    static final String valuta_RUB = "рубли", valuta_DOL = "доллары", valuta_EUR = "евро"; // валюты конвертера
+    static final double kurs_DOL = 60, kurs_EUR = 76; // курсы валют
 
     private int value; // здесь будет хранится сумма, которая у пользователя на руках
     private String choice_value; // тут хранится выбранная валюта
-    JFrame frame;
+    private JPanel panel;
+    private JButton button;
 
     public Currency() {
+
+        super("Money Converter");
+        panel = new JPanel();
+        panel.setLayout(null);
+        setSize(400, 400);
+        button = new JButton("конвертировать");
+        button.setSize(150, 30);
+        button.setLocation(150, 150);
+        panel.add(button);
+        setContentPane(panel);
+        setVisible(true);
 
         System.out.println("Ваша валюта, введите на русском пример:\n" +
                   "\n" + valuta_RUB + "\n" + valuta_DOL + "\n" + valuta_EUR);
@@ -36,14 +46,10 @@ public class Currency implements IConverter {
         System.out.print ("Введите сумму которая у вас есть: ");
         Scanner value = new Scanner(System.in);
         this.value = value.nextInt();
+
     }
 
     public void go() {
-
-        frame = new JFrame("Converter");
-        frame.setSize(500, 500);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         System.out.println("Имеющиеся валюты: " +
                 "\ni." + valuta_RUB +
@@ -64,6 +70,7 @@ public class Currency implements IConverter {
         get_Adjustment(value, choice_user);
     }
 
+    @Override
     public void get_Adjustment (int value, String money_in) {
 
         double num = 0;
@@ -83,6 +90,11 @@ public class Currency implements IConverter {
             System.out.print("\nСумма к снятию = " + num);
             // Здесь должна быть окончательная сумма после конвертации
         }
+    }
+
+    @Override
+    public void gui_go() {
+
     }
 
     public static void main(String[] args) {
