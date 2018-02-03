@@ -55,6 +55,3 @@ public class Incrementor implements Runnable {
     }
 }
 
-/*
-
- */
